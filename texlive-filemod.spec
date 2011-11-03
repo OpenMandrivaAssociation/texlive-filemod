@@ -1,3 +1,9 @@
+# revision 24042
+# category Package
+# catalog-ctan /macros/latex/contrib/filemod
+# catalog-date 2011-09-21 00:38:26 +0200
+# catalog-license lppl1.3
+# catalog-version 1.2
 Name:		texlive-filemod
 Version:	1.2
 Release:	1
@@ -48,6 +54,7 @@ purely expandable macros or by faster but non-expandable ones.
 %{_texmfdistdir}/tex/latex/filemod/filemod.sty
 %doc %{_texmfdistdir}/doc/latex/filemod/README
 %doc %{_texmfdistdir}/doc/latex/filemod/filemod.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -58,3 +65,5 @@ purely expandable macros or by faster but non-expandable ones.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
