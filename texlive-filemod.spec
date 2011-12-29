@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The package provides macros to read and compare the
@@ -31,20 +29,12 @@ for DVI output with recent versions of the LaTeX compiler which
 uses pdfLaTeX in DVI mode. The functionality is provided by
 purely expandable macros or by faster but non-expandable ones.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -55,7 +45,6 @@ purely expandable macros or by faster but non-expandable ones.
 %{_texmfdistdir}/tex/latex/filemod/filemod.sty
 %doc %{_texmfdistdir}/doc/latex/filemod/README
 %doc %{_texmfdistdir}/doc/latex/filemod/filemod.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -66,5 +55,3 @@ purely expandable macros or by faster but non-expandable ones.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
