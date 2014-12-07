@@ -6,7 +6,7 @@
 # catalog-version 1.2
 Name:		texlive-filemod
 Version:	1.2
-Release:	8
+Release:	9
 Summary:	Provide file modification times, and compare them
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/filemod
