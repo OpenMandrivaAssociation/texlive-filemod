@@ -1,6 +1,6 @@
 Name:		texlive-filemod
 Version:	64967
-Release:	1
+Release:	2
 Summary:	Provide file modification times, and compare them
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/filemod
