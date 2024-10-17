@@ -3,7 +3,7 @@ Version:	64967
 Release:	2
 Summary:	Provide file modification times, and compare them
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/filemod
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/filemod
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/filemod.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/filemod.doc.r%{version}.tar.xz
